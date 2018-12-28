@@ -15,7 +15,7 @@ void setup() {
   // D6 status energía cerebro
   
   pinMode(2, INPUT_PULLUP);
-  pinMode(6, INPUT_PULLUP);
+  pinMode(3, INPUT_PULLUP);
   pinMode(10, OUTPUT);
   Serial.begin(9600);
 
@@ -40,7 +40,7 @@ void loop() {
     gatillo_n = 255; 
   }
 
-  cerebro = digitalRead(6);
+  cerebro = digitalRead(3);
   habil = digitalRead(2);
 
   if(habil == 0){
@@ -52,7 +52,7 @@ void loop() {
     delay(50);
     Serial.println("entrando a sleep mode");
     delay(100);
-    LowPower.powerDown(SLEEP_8S, ADC_OFF, BOD_OFF);   
+    LowPower.powerDown(SLEEP_1S, ADC_OFF, BOD_OFF);   
   }
 
 
